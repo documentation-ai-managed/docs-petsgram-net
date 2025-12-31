@@ -1,0 +1,136 @@
+---
+title: Changelog
+description: Track the latest updates, new features, and improvements to Petsgram over time.
+---
+
+## Recent Updates
+
+Stay current with Petsgram's evolution. You receive new tools to share pet photos, connect with communities, and shop for pet essentials.
+
+<Callout kind="info">
+  Check the [Petsgram status page](https://status.petsgram.net) for live service updates and uptime.
+</Callout>
+
+<Update label="2024-11-15" description="v2.0.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- **Enhanced Hashtag Feed**: Discover trending pet hashtags with real-time filtering. Use `#MyPetAdventure` to feature your posts on the main page.
+- **Store Checkout API**: Integrate seamless purchases with new webhooks for order notifications.
+
+## Improvements
+
+- Faster image uploads by `>50%` for smoother sharing.
+- Redesigned store categories for better pet product discovery.
+
+## Bug Fixes
+
+- Fixed hashtag search returning duplicate posts.
+- Resolved store cart persistence issues on mobile.
+
+Example webhook payload for new orders:
+
+<CodeGroup tabs="JavaScript,Python">
+```javascript
+// Handle incoming webhook
+app.post('/webhook/orders', (req, res) => {
+  const { orderId, petProduct, total } = req.body;
+  console.log(`New order ${orderId}: ${petProduct} for $${total}`);
+  res.status(200).send('OK');
+});
+```
+```python
+# Handle incoming webhook
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/webhook/orders', methods=['POST'])
+def orders_webhook():
+    data = request.json
+    order_id = data['orderId']
+    product = data['petProduct']
+    total = data['total']
+    print(f"New order {order_id}: {product} for ${total}")
+    return 'OK', 200
+```
+</CodeGroup>
+
+</Update>
+
+<Update label="2024-10-10" description="v1.5.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- **Pet Profile Pages**: Create dedicated profiles for each pet with stats and follower counts.
+- **Store Wishlists**: Save favorite pet products and share lists with friends.
+
+## Improvements
+
+- Community feed now loads `2x` faster with infinite scroll.
+
+## Bug Fixes
+
+- Corrected login errors during peak hours.
+- Fixed post visibility for private hashtag groups.
+
+</Update>
+
+<Update label="2024-09-05" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- **Core Social Network**: Post pet photos/videos with custom hashtags.
+- **Online Store Launch**: Browse and buy toys, food, and accessories.
+
+## Breaking Changes
+
+- Updated hashtag format from `#pet` to `#MyPetName` for better discoverability.
+
+## Bug Fixes
+
+- Initial platform stability improvements.
+
+</Update>
+
+## Key Highlights
+
+Explore major additions across releases:
+
+<Columns cols={3}>
+  <Card title="Social Features" icon="share-2" href="/introduction">
+    Hashtag feeds and community sharing.
+  </Card>
+  <Card title="Store Enhancements" icon="shopping-cart" href="/quickstart">
+    New checkout and wishlist tools.
+  </Card>
+  <Card title="Performance Boosts" icon="zap" href="/authentication">
+    Faster uploads and feeds.
+  </Card>
+</Columns>
+
+## Stay Informed
+
+Follow these steps to never miss an update:
+
+<Steps>
+  <Step title="Subscribe to Newsletter" icon="mail">
+    Enter your email at [petsgram.net/newsletter](https://petsgram.net/newsletter) for weekly summaries.
+  </Step>
+  <Step title="Follow on Social" icon="twitter">
+    Track `@PetsgramNet` for announcements and previews.
+  </Step>
+  <Step title="Check GitHub" icon="github">
+    Visit [github.com/petsgram](https://github.com/petsgram) for release notes and issues.
+  </Step>
+</Steps>
+
+<ExpandableGroup>
+  <Expandable title="Older Versions" default-open="false">
+    View v0.x releases in our [full archive](https://docs.petsgram.net/changelog-archive).
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">
+  Enable notifications in your Petsgram account settings to get instant alerts for features relevant to pet sharing and shopping.
+</Callout>

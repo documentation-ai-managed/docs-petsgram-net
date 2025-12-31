@@ -1,0 +1,177 @@
+---
+title: Getting Started with Petsgram
+description: Learn how to create an account, verify your email, and post your first pet content to join the community quickly.
+---
+
+## Prerequisites
+
+Before you begin, ensure you have:
+
+- A valid email address
+- Access to your email inbox for verification
+- A modern web browser like Chrome, Firefox, or Safari (or the Petsgram mobile app)
+
+<Callout kind="info">
+
+Petsgram works on desktop and mobile. No special software required.
+
+</Callout>
+
+## Create and Verify Your Account
+
+Follow these steps to sign up and get verified.
+
+<Steps>
+  <Step title="Visit Petsgram" icon="globe">
+
+    Open your browser and go to [https://petsgram.net](https://petsgram.net).
+
+  </Step>
+  <Step title="Sign Up" icon="user-plus">
+
+    Click **Sign Up** in the top right.
+
+    Fill in your details:
+
+    - Email address
+    - Password (at least 8 characters)
+    - Pet name (e.g., "Buddy")
+
+    Agree to terms and click **Create Account**.
+
+  </Step>
+  <Step title="Check Email" icon="mail">
+
+    Check your inbox for a verification email from `no-reply@petsgram.net`.
+
+    Click the **Verify Email** button in the email.
+
+  </Step>
+  <Step title="Complete Setup" icon="check-circle">
+
+    Return to Petsgram and log in. Your account is now active!
+
+  </Step>
+</Steps>
+
+## Post Your First Pet Content
+
+Share a photo or video of your pet using the web or app.
+
+<Tabs>
+  <Tab title="Web" icon="globe">
+
+    <Steps>
+      <Step title="Upload Media" icon="upload">
+
+        Click **Post** on the dashboard.
+
+        Drag and drop your pet photo or video (max 50MB).
+
+      </Step>
+      <Step title="Add Caption" icon="edit-3">
+
+        Write a caption like "My dog Max at the park!"
+
+        Add hashtags: `#Petsgram #DogLovers #MaxTheDog`
+
+      </Step>
+      <Step title="Publish" icon="send">
+
+        Click **Share** to post publicly.
+
+      </Step>
+    </Steps>
+
+  </Tab>
+  <Tab title="Mobile App" icon="smartphone">
+
+    Download the Petsgram app from App Store or Google Play.
+
+    <Steps>
+      <Step title="Tap +" icon="plus">
+
+        Tap the `+` icon at the bottom.
+
+      </Step>
+      <Step title="Select Media" icon="image">
+
+        Choose from camera roll or take new photo/video.
+
+      </Step>
+      <Step title="Tag and Post" icon="hash">
+
+        Add `#Petsgram` and publish.
+
+      </Step>
+    </Steps>
+
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+
+Use `#Petsgram` in every post to feature it on the main page. Combine with breed-specific tags like `#GoldenRetriever` for more visibility.
+
+</Callout>
+
+## Maximize Visibility with Hashtags
+
+Hashtags connect your content to the community.
+
+```javascript
+// Example: Generate a shareable post URL with hashtags
+const postUrl = "https://petsgram.net/posts/your-post-id";
+const hashtags = "#Petsgram,#PetLovers,#CutePets";
+const shareLink = `${postUrl}?hashtags=${encodeURIComponent(hashtags)}`;
+console.log(shareLink);
+```
+
+```bash
+# Share via command line (for automation)
+curl -X POST https://petsgram.net/api/share \
+  -d 'postId=123&hashtags="#Petsgram #CatOfInstagram"'
+```
+
+<CodeGroup tabs="JavaScript,Bash">
+  ```javascript
+  const postUrl = "https://petsgram.net/posts/your-post-id";
+  const hashtags = "#Petsgram,#PetLovers";
+  const shareLink = `${postUrl}?hashtags=${encodeURIComponent(hashtags)}`;
+  console.log(shareLink);
+  ```
+  ```bash
+  curl -X POST https://petsgram.net/api/share \
+    -d 'postId=123&hashtags="#Petsgram #CatOfInstagram"'
+  ```
+</CodeGroup>
+
+## Next Steps
+
+Explore more features.
+
+<Columns cols={3}>
+  <Card title="Shop Store" icon="shopping-bag" href="#store">
+
+    Buy pet products with exclusive discounts for members.
+
+  </Card>
+  <Card title="Join Community" icon="users" href="#community">
+
+    Follow other pet owners and interact with posts.
+
+  </Card>
+  <Card title="Advanced Features" icon="sparkles" href="#advanced">
+
+    Learn about live streams and pet profiles.
+
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+
+- **Email not received?** Check spam folder or resend from account settings.
+- **Post not visible?** Ensure `#Petsgram` is public and not draft.
+- **App crashes?** Update to latest version.
+
+</Expandable>

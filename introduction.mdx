@@ -1,0 +1,119 @@
+---
+title: Introduction to Petsgram
+description: Discover Petsgram, the social network designed for pet owners to share photos, connect with communities, and shop for pet products.
+---
+
+## Overview
+
+Petsgram connects pet owners worldwide through a vibrant social network where you share photos and stories of your furry friends. Use the special `#petsgram` hashtag to feature your posts on the main feed, building a community around adorable pet moments. You also access an integrated online store stocked with premium pet products, from toys to treats.
+
+Our mission empowers pet lovers to showcase their companions, foster connections, and discover essential gear—all in one platform.
+
+## Key Features
+
+<Columns cols={3}>
+
+<Card title="Social Sharing" icon="share-2" href="/quickstart">
+
+Upload photos and videos of your pets. Add the `#petsgram` hashtag to get featured on the homepage feed, reaching thousands of fellow enthusiasts.
+
+</Card>
+
+<Card title="Pet Communities" icon="users" href="/authentication">
+
+Join groups by pet type—dogs, cats, birds, and more. Follow creators, like posts, and comment to build lasting connections.
+
+</Card>
+
+<Card title="Online Store" icon="shopping-cart" href="/configuration">
+
+Browse curated pet products with secure checkout. Earn loyalty points on purchases to redeem for discounts.
+
+</Card>
+
+</Columns>
+
+## Quick Start
+
+Get up and running in minutes with these steps.
+
+<Steps>
+
+<Step title="Create Account" icon="user-plus">
+
+Visit `https://petsgram.net` and sign up with your email or social login. Verify your account to unlock posting.
+
+</Step>
+
+<Step title="Share Your First Post" icon="camera">
+
+Upload a pet photo, add caption and `#petsgram` hashtag. Hit publish to enter the featured feed.
+
+````javascript
+// Example post via API
+const postData = {
+  image: 'https://your-pet-photo.jpg',
+  caption: 'Meet my dog Max! #petsgram',
+  tags: ['dog', 'petsgram']
+};
+
+fetch('https://api.petsgram.net/posts', {
+  method: 'POST',
+  headers: { 'Authorization': `Bearer ${YOUR_TOKEN}` },
+  body: JSON.stringify(postData)
+});
+````
+
+</Step>
+
+<Step title="Explore Store" icon="shopping-bag">
+
+Navigate to the store tab. Add items to cart and checkout using saved payment methods.
+
+</Step>
+
+</Steps>
+
+<Callout kind="tip">
+
+Pro tip: Complete your profile with pet details to attract more followers and boost your featured chances.
+
+</Callout>
+
+## Next Steps
+
+Ready to dive deeper? Choose your path:
+
+<Columns cols={2}>
+
+<Card title="Quickstart Guide" icon="zap" href="/quickstart">
+
+Follow detailed setup for posting and profiles.
+
+</Card>
+
+<Card title="Authentication" icon="lock" href="/authentication">
+
+Secure your account with API keys and tokens.
+
+</Card>
+
+<Card title="Store API" icon="package" href="/configuration">
+
+Integrate shopping programmatically.
+
+</Card>
+
+<Card title="Changelog" icon="git-branch" href="/changelog">
+
+Stay updated with latest features.
+
+</Card>
+
+</Columns>
+
+<Expandable title="Our Vision" default-open="false">
+
+Petsgram envisions a world where every pet has a spotlight. We prioritize user privacy, fast performance (`<100ms` load times), and mobile-first design. Join over 1M users sharing joy daily.
+
+</Expandable>
